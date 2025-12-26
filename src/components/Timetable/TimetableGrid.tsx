@@ -103,13 +103,18 @@ const useStyles = makeStyles(theme => {
   };
 });
 
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+// THIS IS THE PLACE that changes what days are displayed on the table. 
+// TODO add functionality that adds weekends for what courses are being done 
+// just a front end for the table 
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sat']; // this to become a variable upon generation
 const daysToLetters: { [key: string]: string } = {
   Monday: 'M',
   Tuesday: 'T',
   Wednesday: 'W',
   Thursday: 'H',
   Friday: 'F',
+  Saturday: 'S',
+  Sunday: 's',
 };
 
 export interface Props {
@@ -179,7 +184,7 @@ const Grid: React.FC<Props> = ({
           {onToggleTwentyFourHours && (
             <IconButton
               onClick={onToggleTwentyFourHours}
-              size="small"
+              size="medium"
               disabled={disabled}
             >
               <Schedule />
