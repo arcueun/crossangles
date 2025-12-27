@@ -8,7 +8,8 @@ export const SESSION_LIFT_Z = 1;
 export const CLASH_OFFSET_X = -9;
 export const CLASH_OFFSET_Y = -7;
 
-export const TIMETABLE_DAYS = 5;
+// controls width of events, variable on which events exist
+export const TIMETABLE_DAYS = 7;
 export const TIMETABLE_FIRST_CELL_WIDTH = 62;
 const TIMETABLE_COMPACT_CELL_HEIGHT = 50;
 const TIMETABLE_CELL_HEIGHT = 60;

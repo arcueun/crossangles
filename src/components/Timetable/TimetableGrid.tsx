@@ -8,6 +8,7 @@ import {
   TIMETABLE_BORDER_WIDTH,
   TIMETABLE_FIRST_CELL_WIDTH,
   TIMETABLE_CELL_MIN_WIDTH,
+  TIMETABLE_DAYS,
 } from './timetableUtil';
 
 const noSelect: CSSProperties = {
@@ -35,7 +36,7 @@ const useStyles = makeStyles(theme => {
       borderWidth: TIMETABLE_BORDER_WIDTH,
       borderRightWidth: 0,
       borderBottomWidth: 0,
-      minWidth: TIMETABLE_FIRST_CELL_WIDTH + TIMETABLE_CELL_MIN_WIDTH * 5 + TIMETABLE_BORDER_WIDTH,
+      minWidth: TIMETABLE_FIRST_CELL_WIDTH + TIMETABLE_CELL_MIN_WIDTH * TIMETABLE_DAYS + TIMETABLE_BORDER_WIDTH,
       zIndex: -1,
     },
     row: {
@@ -103,10 +104,8 @@ const useStyles = makeStyles(theme => {
   };
 });
 
-// THIS IS THE PLACE that changes what days are displayed on the table. 
-// TODO add functionality that adds weekends for what courses are being done 
-// just a front end for the table 
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sat']; // this to become a variable upon generation
+// variable, need to check what selected days exist
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']; // this to become a variable upon generation
 const daysToLetters: { [key: string]: string } = {
   Monday: 'M',
   Tuesday: 'T',
@@ -176,7 +175,7 @@ const Grid: React.FC<Props> = ({
     rowClassList.push(classes.disableTransitions);
   }
   const rowClasses = rowClassList.join(' ');
-
+console.log('buh', classes)
   return (
     <div id={timetableGridId} className={classes.grid}>
       <div className={`${classes.row} ${classes.compact} ${classes.header}`}>
@@ -207,7 +206,7 @@ const Grid: React.FC<Props> = ({
               {am}
             </span>
           </div>
-
+          
           {days.map(day => (
             <div
               key={day}
