@@ -175,7 +175,7 @@ const Grid: React.FC<Props> = ({
     rowClassList.push(classes.disableTransitions);
   }
   const rowClasses = rowClassList.join(' ');
-console.log('buh', classes)
+
   return (
     <div id={timetableGridId} className={classes.grid}>
       <div className={`${classes.row} ${classes.compact} ${classes.header}`}>
