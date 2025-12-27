@@ -81,7 +81,7 @@ export function scoreFreeDays(sessions: LinkedSession[]): number {
     scores[sessions[i].day] = 0;
   }
 
-  return scores.M + scores.T + scores.W + scores.H + scores.F;
+  return scores.M + scores.T + scores.W + scores.H + scores.F + scores.S + scores.s;
 }
 
 export function scoreTimes(sessions: LinkedSession[]): number {
@@ -99,6 +99,7 @@ export function scoreTimes(sessions: LinkedSession[]): number {
 
 export function scoreDayLength(sessions: LinkedSession[]): number {
   const perHour = -10;
+  // do we have to harcode this? 
   const starts = { M: 24, T: 24, W: 24, H: 24, F: 24, S: 24, s: 24 };
   const ends = { M: -1, T: -1, W: -1, H: -1, F: -1, S: -1, s: -1 };
 
@@ -118,6 +119,8 @@ export function scoreDayLength(sessions: LinkedSession[]): number {
   if (ends.W > -1) total += ends.W - starts.W;
   if (ends.H > -1) total += ends.H - starts.H;
   if (ends.F > -1) total += ends.F - starts.F;
+  if (ends.S > -1) total += ends.S - starts.S;
+  if (ends.s > -1) total += ends.s - starts.s;
 
   return total * perHour;
 }
