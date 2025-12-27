@@ -183,7 +183,7 @@ console.log('buh', classes)
           {onToggleTwentyFourHours && (
             <IconButton
               onClick={onToggleTwentyFourHours}
-              size="medium"
+              size="small"
               disabled={disabled}
             >
               <Schedule />
