@@ -88,3 +88,6 @@ export function findFreeDepth(takenDepths: Set<number>): number {
 export function getCustomCode() {
   return `custom_${Math.random()}`;
 }
+
+export function findValidDays() {
+}

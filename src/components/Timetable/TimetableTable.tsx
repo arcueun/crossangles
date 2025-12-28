@@ -271,7 +271,6 @@ function TimetableTable({
     [compact, dragging, dimensions, getNearestDropzone, showMode, start, timetable],
   );
 
-
   const classes = useStyles();
   const rootClasses = [classes.root];
   const disabled = timetable.renderOrder.length === 0;
@@ -288,15 +287,26 @@ function TimetableTable({
     [dragging],
   );
 
+  // const daysActive: String[] = (() => {
+  //   // check if timetable
+  // });
+  console.log('bla')
+  console.log('breuh', timetable.renderOrder);    
+
   const sessionRenderData: SessionRenderData[] = (() => {
     if (!dimensions.width) {
       return [];
     }
 
     const results: SessionRenderData[] = [];
+    // console.log('sig')
     for (const sid of timetable.renderOrder) {
       let placement = timetable.getMaybe(sid);
       if (!placement) continue;
+
+      //TODO 
+      // good, all thec oures data comes through here 
+      console.log('buh', placement.session)
 
       let session = placement.session;
       const isStreamBeingDragged = dragging ? dragging.stream.id === session.stream.id : false;
