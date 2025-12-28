@@ -4,6 +4,7 @@ import { StreamData, StreamId, getStreamId, LinkedStream } from './Stream';
 export type SessionId = string;
 
 // variable, need to check what dayeexist
+// is it SOLID principles to invoke function from TimetableTable here? 
 export type DayLetter = 'M' | 'T' | 'W' | 'H' | 'F' | 'S' | 's';
 export const ALL_DAYS: DayLetter[] = ['M', 'T', 'W', 'H', 'F', 'S', 's'];
 

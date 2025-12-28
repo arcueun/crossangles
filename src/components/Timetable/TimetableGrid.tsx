@@ -105,6 +105,7 @@ const useStyles = makeStyles(theme => {
 });
 
 // variable, need to check what selected days exist
+// use TIMETABLE_DAYS to determine how long this should be 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']; // this to become a variable upon generation
 const daysToLetters: { [key: string]: string } = {
   Monday: 'M',

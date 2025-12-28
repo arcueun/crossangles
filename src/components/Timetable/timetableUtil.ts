@@ -9,7 +9,9 @@ export const CLASH_OFFSET_X = -9;
 export const CLASH_OFFSET_Y = -7;
 
 // controls width of events, variable on which events exist
-export const TIMETABLE_DAYS = 7;
+export const TIMETABLE_DAYS = 7; // will be determined by a function later 
+// sln probably similar to export let TIMETABLE_DAYS = getDays()
+// or better yet, just put the whole invoke thing into timetableTable and let everything read from that one instead. 
 export const TIMETABLE_FIRST_CELL_WIDTH = 62;
 const TIMETABLE_COMPACT_CELL_HEIGHT = 50;
 const TIMETABLE_CELL_HEIGHT = 60;
@@ -40,8 +42,9 @@ export function arraysEqual<T>(a: T[], b: T[]): boolean {
   return true;
 }
 
-export function getCellWidth(timetableWidth: number): number {
+export function getCellWidth(timetableWidth: number, numDays: number): number {
   return (timetableWidth - TIMETABLE_FIRST_CELL_WIDTH) / TIMETABLE_DAYS;
+  // return (timetableWidth - TIMETABLE_FIRST_CELL_WIDTH) / numDays;
 }
 
 export function getCellHeight(compact: boolean, showMode: boolean) {
