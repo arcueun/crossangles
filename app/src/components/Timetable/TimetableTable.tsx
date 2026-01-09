@@ -94,6 +94,7 @@ export function getCourseColour(
 
 const timetableGridId = `TimetableGrid-${Math.random()}`
 
+// duration here refers to number of displayed hours on timetable 
 export function getDimensions(duration: number, options: Options): Dimensions | undefined {
   const timetableElement = document.getElementById(timetableGridId)
   if (timetableElement === null) {
@@ -283,9 +284,10 @@ function TimetableTable({
   )
 
 
-  const classes = useStyles()
-  const rootClasses = [classes.root]
-  const disabled = timetable.renderOrder.length === 0
+  const classes = useStyles();
+  const rootClasses = [classes.root];
+  const disabled = timetable.renderOrder.length === 0;
+
   if (disabled) {
     rootClasses.push(classes.faded)
   }
@@ -332,9 +334,8 @@ function TimetableTable({
       if (placement.isDragging && isStreamBeingDragged && highlightedZone) {
         position.height = highlightedZone.getPosition(dimensions, start, numDisplayDays, compact, showMode).height
       }
-      const courseId = getCourseId(course)
-      const key = `${courseId}-${stream.component}-${index}`
-
+      const courseId = getCourseId(course);
+      const key = `${courseId}-${stream.component}-${index}`;
       const renderData = {
         course,
         id,

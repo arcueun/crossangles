@@ -1,6 +1,7 @@
 # CrossAngles
 
-Welcome to CrossAngles! This is the deployment repository for CrossAngles.
+Welcome to CrossAngles! This is the official repository for the unofficial timetable planner. 
+This repository is for the development of CrossAngles, if you're looking for the app to use it, you can find it at: https://crossangles.app
 
 ## Setting up the repository and submodules
 
